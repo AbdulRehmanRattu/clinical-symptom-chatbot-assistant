@@ -1,0 +1,18 @@
+PyQt5
+numpy
+opencv-python
+tensorflow
+
+# apt-get install tesseract-ocr
+pytesseract
+
+Pillow
+fpdf
+pypdf
+langchain
+langchain-community
+faiss-gpu
+# faiss-cpu
+
+sentence-transformers
+pyinstaller
