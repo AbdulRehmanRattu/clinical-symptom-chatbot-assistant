@@ -34,25 +34,13 @@ Outpatient clinics and telehealth triage services experience severe front-desk i
 
 ## Technical Architecture & Pipeline
 
-```
-[ Patient / Staff Intake ] ──► [ PyQt5 Desktop Interface ]
-                                       │
-         ┌─────────────────────────────┴─────────────────────────────┐
-         ▼                                                           ▼
-[ Symptom Questionnaire ]                                   [ Chest X-Ray Ingestion ]
-         │                                                           │
-         ▼                                                           ▼
-[ Clinical Rule Stratification ]                            [ OpenCV Normalization (150x150) ]
-         │                                                           │
-         ▼                                                           ▼
-[ Specialty Routing Matrix ]                                [ Keras CNN Inference (model_95.h5) ]
-         │                                                           │
-         └─────────────────────────────┬─────────────────────────────┘
-                                       ▼
-                       [ FPDF Report Generation Engine ]
-                                       ▼
-                       [ Exported Clinical Diagnostic PDF ]
-```
+<div align="center">
+
+![Clinical Symptom Chatbot & Radiograph Diagnostic Engine Architecture](resources/images/architecture_pipeline.png)
+
+</div>
+
+The clinical workstation architecture coordinates multi-modal patient ingestion via a responsive PyQt5 desktop interface, branching into dual-stream processing: deterministic clinical questionnaire rule scoring on one path, and OpenCV-normalized chest X-ray deep CNN classification (`model_95.h5`) on the other. Both pathways converge into an automated FPDF medical documentation engine for court-admissible clinical summary generation.
 
 ---
 
